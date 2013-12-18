@@ -1,6 +1,6 @@
 # VariableNeighborhoodSearch
 
-TODO: Write a gem description
+Solves travelling salesman with variable neighborhood search
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+An example VariableNeighborhoodSearch::VariableNeighborhoodSearch([[50, 50], [70, 70]], 1...20, 50, 70)
 
 ## Contributing
 
