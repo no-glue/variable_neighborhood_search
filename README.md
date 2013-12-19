@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-An example VariableNeighborhoodSearch::VariableNeighborhoodSearch([[50, 50], [70, 70]], 1...20, 50, 70)
+An example VariableNeighborhoodSearch::VariableNeighborhoodSearch.new.search([[50, 50], [70, 70]], 1...20, 50, 70)
 
 ## Contributing
 
