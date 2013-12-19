@@ -1,7 +1,7 @@
 require "variable_neighborhood_search/version"
 
 module VariableNeighborhoodSearch
-  class VariableNeighborhoodSearch
+  class VariableNighborhoodSearch
     # get distance
     def euc_2d(c1, c2)
       Math.sqrt((c1[0] - c2[0]) ** 2 + (c1[1] - c2[1]) ** 2).round
@@ -44,21 +44,24 @@ module VariableNeighborhoodSearch
     # local search
     def local_search(best, cities, max_no_improv, neighborhood)
       count = 0
-        begin
-          candidate = {:vector => shake(cities)}
-          neighborhood.times(two_opt(candidate[:vector]))
-          candidate[:cost] = cost(candidate[:vector], cities)
-          if candidate[:cost] < best[:cost]
-            count, best = 0, candidate
-          else
-            count += 1
-        end until count >= max_no_improv
+      begin
+        candidate = {:vector => shake(cities)}
+        neighborhood.times(two_opt(candidate[:vector]))
+        candidate[:cost] = cost(candidate[:vector], cities)
+        if candidate[:cost] < best[:cost]
+          count, best = 0, candidate
+        else
+          count += 1
+        end
+      end until count >= max_no_improv
       best
     end
 
     # search
     def search(cities, neighborhoods, max_no_improv, max_no_improv_ls)
-      best = {:vector => shake(cities), :cost => cost(best[:vector], cities)}
+      best = {}
+      best[:vector] = shake(cities)
+      best[:cost] = cost(best[:vector], cities)
       iter, count = 0, 0
       begin
         neighborhoods.each do |neigh|
@@ -76,6 +79,7 @@ module VariableNeighborhoodSearch
           end
         end
       end until count >= max_no_improv
+      best
     end
   end
 end
