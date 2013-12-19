@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = VariableNeighborhoodSearch::VERSION
   spec.authors       = ["no-glue"]
   spec.email         = ["nikolapav1985@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{variable neighborhood search to solve travelling salesman}
+  spec.summary       = %q{variable neighborhood search to solve travelling salesman}
   spec.homepage      = ""
   spec.license       = "MIT"
 
